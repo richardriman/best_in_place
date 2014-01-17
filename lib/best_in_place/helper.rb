@@ -56,6 +56,7 @@ module BestInPlace
       out << " data-inner-class='#{opts[:inner_class]}'" if opts[:inner_class]
       out << " data-html-attrs='#{opts[:html_attrs].to_json}'" unless opts[:html_attrs].blank?
       out << " data-value='#{attribute_escape(value)}'" if value
+      out << " data-autosize='#{opts[:autosize]}'" if opts[:autosize]
 
       if opts[:display_as] || opts[:display_with]
         original_content = real_object.send(field)
