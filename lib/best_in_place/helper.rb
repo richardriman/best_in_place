@@ -94,7 +94,7 @@ module BestInPlace
 
   private
     def build_value_for(object, field, opts)
-      return "" if object.send(field).blank?
+      # return "" if object.send(field).blank? # commented out to fix bug with empty textarea
 
       klass = if object.respond_to?(:id)
         "#{object.class}_#{object.id}"
@@ -137,4 +137,3 @@ module BestInPlace
     end
   end
 end
-
